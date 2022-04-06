@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc -p ./tsconfig.json",
     "watch": "tsc-watch -p ./tsconfig.json --onSuccess \"node ./dist/index.js\"",
-    "start": "yarn run build && node --es-module-specifier-resolution=node dist/index.js"
+    "start": "node --es-module-specifier-resolution=node dist/index.js",
   },
   "dependencies": {
     "@octokit/core": "^3.6.0",
