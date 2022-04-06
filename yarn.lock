@@ -373,11 +373,6 @@ end-of-stream@^1.1.0:
   dependencies:
     once "^1.4.0"
 
-env-example@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/env-example/-/env-example-1.0.1.tgz#cd0a039fa51760c3af17c205622274418acb243f"
-  integrity sha512-VIws0KeEW+PIQG0ZqhNM0YY221C/C1rDrXzoyoYyb94d2jlmr6NQOjHZ8UamdZofuSL2vrSsaW534n4/y2TG8Q==
-
 es-abstract@^1.17.4:
   version "1.19.2"
   resolved "https://registry.yarnpkg.com/es-abstract/-/es-abstract-1.19.2.tgz#8f7b696d8f15b167ae3640b4060670f3d054143f"
