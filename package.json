@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "watch": "tsc-watch -p ./tsconfig.json --onSuccess \"node ./dist/index.js\"",
-    "start": "node --es-module-specifier-resolution=node dist/index.js"
+    "start": "node --es-module-specifier-resolution=node dist/index.js",
+    "deploy": "tsc -p ./tsconfig.json && yarn start"
   },
   "dependencies": {
     "@octokit/core": "^3.6.0",
