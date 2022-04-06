@@ -1,0 +1,30 @@
+{
+  "name": "rocco",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "watch": "tsc-watch -p ./tsconfig.json --onSuccess \"node ./dist/index.js\"",
+    "start": "node --es-module-specifier-resolution=node dist/index.js"
+  },
+  "dependencies": {
+    "@octokit/core": "^3.6.0",
+    "cron": "^1.8.2",
+    "dotenv": "^16.0.0",
+    "env-example": "^1.0.1",
+    "googleapis": "^99.0.0",
+    "node-fetch": "^3.2.3",
+    "node-telegram-bot-api": "^0.56.0",
+    "nodemailer": "^6.7.3",
+    "twilio": "^3.76.0"
+  },
+  "devDependencies": {
+    "@types/cron": "^1.7.3",
+    "@types/node": "^17.0.23",
+    "@types/node-telegram-bot-api": "^0.56.0",
+    "@types/nodemailer": "^6.4.4",
+    "tsc-watch": "^4.6.2",
+    "typescript": "^4.6.3"
+  }
+}
