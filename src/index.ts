@@ -27,6 +27,8 @@ const token =
 const bot = new TelegramBot(token, { polling: true });
 
 (function main() {
+  bot.sendMessage(process.env.TELEGRAM_USER_CHAT_ID, '🤖 Bot deployed!');
+
   const workStartTimes: WorkStartTime[] = (() => {
     const workStartTimesRaw = process.env.WORK_TIMES;
     return workStartTimesRaw.split(',').map((time) => {
@@ -96,12 +98,13 @@ const bot = new TelegramBot(token, { polling: true });
       console.error(error);
     }
   });
+
+  bot.on('message', function (query: TelegramBot.Message) {
+    const messageLowercase = query.text?.toLowerCase();
+  
+    if (messageLowercase === 'ping') {
+      bot.sendMessage(process.env.TELEGRAM_USER_CHAT_ID, 'Bot is active');
+    }
+  });
 })();
 
-bot.on('message', function (query: TelegramBot.Message) {
-  const messageLowercase = query.text?.toLowerCase();
-
-  if (messageLowercase === 'ping') {
-    bot.sendMessage(process.env.TELEGRAM_USER_CHAT_ID, 'Bot is active');
-  }
-});
