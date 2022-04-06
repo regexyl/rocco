@@ -100,6 +100,7 @@ const bot = new TelegramBot(token, { polling: true });
   });
 
   bot.on('message', function (query: TelegramBot.Message) {
+    console.log(query)
     const messageLowercase = query.text?.toLowerCase();
   
     if (messageLowercase === 'ping') {
