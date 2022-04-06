@@ -97,3 +97,11 @@ const bot = new TelegramBot(token, { polling: true });
     }
   });
 })();
+
+bot.on('message', function (query: TelegramBot.Message) {
+  const messageLowercase = query.text?.toLowerCase();
+
+  if (messageLowercase === 'ping') {
+    bot.sendMessage(process.env.TELEGRAM_USER_CHAT_ID, 'Bot is active');
+  }
+});
