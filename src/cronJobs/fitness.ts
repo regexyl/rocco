@@ -20,7 +20,7 @@ export function getFitnessCronJob(
   return new CronJob(
     `${minute} ${hour} * * *`,
     async function induceComputerSleep() {
-      const message = `It's ${getTime()}! Ready to start deep work? ⏱`;
+      const message = `It's ${getTime()}! Ready to start fitness? ⏱`;
       const response = await bot.sendMessage(
         process.env.TELEGRAM_USER_CHAT_ID,
         message,
