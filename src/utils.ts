@@ -1,3 +1,6 @@
+import 'dotenv/config';
+import { DateTime } from 'luxon';
+
 /**
  * Capitalize the first character of a string.
  * @param  {string} string
@@ -13,8 +16,10 @@ export function capitalize(string: string): string {
  * @returns string Format of {hour}:{minute}
  */
 export function getTime(unixTimestamp?: number): string {
-  const date = unixTimestamp ? new Date(unixTimestamp * 1000) : new Date();
-  return getFormattedHourMinute(date.getHours(), date.getMinutes());
+  const date = unixTimestamp
+    ? DateTime.fromSeconds(unixTimestamp * 1000).setZone(process.env.TIME_ZONE)
+    : DateTime.local().setZone(process.env.TIME_ZONE);
+  return getFormattedHourMinute(date.hour, date.minute);
 }
 /**
  * Get time from a 24-hour string, e.g. 0730 -> { hour: 7, minute: 30 }
